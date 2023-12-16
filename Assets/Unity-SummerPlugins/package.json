@@ -10,5 +10,14 @@
     },
     "unity": "2023.2",
     "keywords": ["plugins", "common", "summer"],
-    "dependencies": {}
+    "dependencies": {
+        "com.solidalloy.type-references": "2.16.0",
+        "com.coffee.ui-particle": "git://github.com/mob-sakai/ParticleEffectForUGUI.git#main",
+        "com.cysharp.memorypack": "git://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack#main",
+        "com.cysharp.messagepipe": "git://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe#master",
+        "com.cysharp.unitask": "git://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#master",
+        "com.cysharp.zstring": "git://github.com/Cysharp/ZString.git?path=src/ZString.Unity/Assets/Scripts/ZString#master",
+        "com.nobi.roundedcorners": "git://github.com/kirevdokimov/Unity-UI-Rounded-Corners.git#master",
+        "jp.hadashikick.vcontainer": "git://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#master"
+    }
 }
