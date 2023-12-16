@@ -6,24 +6,29 @@
       "scopes": [
         "com.solidalloy",
         "com.openupm",
-        "org.nuget"
+        "org.nuget",
+        "jp.hadashikick.vcontainer",
+        "com.nobi.roundedcorners",
+        "com.cysharp",
+        "com.coffee.ui-particle"
       ]
     }
   ],
   "dependencies": {
     "com.solidalloy.type-references": "2.16.0",
-    "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
-    "com.cysharp.memorypack": "https://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack",
-    "com.cysharp.messagepipe": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
-    "com.cysharp.zstring": "https://github.com/Cysharp/ZString.git?path=src/ZString.Unity/Assets/Scripts/ZString",
-    "com.nobi.roundedcorners": "https://github.com/kirevdokimov/Unity-UI-Rounded-Corners.git",
+    "com.coffee.ui-particle": "4.4.0",
+    "com.cysharp.memorypack": "1.10.0",
+    "com.cysharp.messagepipe": "1.7.4",
+    "com.cysharp.messagepipe.vcontainer": "1.7.4",
+    "com.cysharp.unitask": "2.5.0",
+    "com.cysharp.zstring": "2.5.1",
+    "com.nobi.roundedcorners": "3.0.1",
+    "jp.hadashikick.vcontainer": "1.13.2",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "3.0.27",
     "com.unity.inputsystem": "1.7.0",
     "com.unity.localization": "1.4.5",
     "com.unity.ugui": "2.0.0",
-    "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
