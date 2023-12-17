@@ -1,0 +1,40 @@
+{
+    "name": "com.summerrise.unity.shared-plugins",
+    "version": "1.0.0",
+    "displayName": "Summer Common Pluings",
+    "description": "Common plugins used for Unity projects. Add scopedRegistries to Package/manifest.json\n     \"scopedRegistries\": [\n        {\n            \"name\": \"package.openupm.com\",\n            \"url\": \"https://package.openupm.com\",\n            \"scopes\": [\n                \"com.solidalloy\",\n                \"com.openupm\",\n                \"org.nuget\",\n                \"jp.hadashikick.vcontainer\",\n                \"com.nobi.roundedcorners\",\n                \"com.cysharp\",\n                \"com.coffee.ui-particle\"\n            ]\n        }\n    ]",
+    
+    "author": {
+        "name": "Link",
+        "email": "honhatlinhmail@gmail.com",
+        "url": ""
+    },
+    "unity": "2023.2",
+    "keywords": ["plugins", "common", "summer"],
+    "scopedRegistries": [
+        {
+            "name": "package.openupm.com",
+            "url": "https://package.openupm.com",
+            "scopes": [
+                "com.solidalloy",
+                "com.openupm",
+                "org.nuget",
+                "jp.hadashikick.vcontainer",
+                "com.nobi.roundedcorners",
+                "com.cysharp",
+                "com.coffee.ui-particle"
+            ]
+        }
+    ],
+    "dependencies": {
+        "com.solidalloy.type-references": "2.16.0",
+        "com.coffee.ui-particle": "4.4.0",
+        "com.cysharp.memorypack": "1.10.0",
+        "com.cysharp.messagepipe": "1.7.4",
+        "com.cysharp.messagepipe.vcontainer": "1.7.4",
+        "com.cysharp.unitask": "2.5.0",
+        "com.cysharp.zstring": "2.5.1",
+        "com.nobi.roundedcorners": "3.0.1",
+        "jp.hadashikick.vcontainer": "1.13.2"
+    }
+}
