@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
-namespace Editor
+namespace Plugins.Unity_SummerPlugins.Editor
 {
     public static class CommonPlugins
     {
@@ -22,7 +21,7 @@ namespace Editor
                 [JsonProperty("scopes")] [ItemCanBeNull] public List<string> Scopes { get; init; }
             }
 
-            [JsonProperty("scopedRegistries")] internal ScopedRegistry[] ScopedRegistries { get; init; }
+            [JsonProperty("scopedRegistries")] internal ScopedRegistry[] ScopedRegistries { get; set; }
             [JsonProperty("dependencies")] internal Dictionary<string, string> Dependencies { get; init; }
         }
 
@@ -34,10 +33,28 @@ namespace Editor
         {
             var plugin = await GetPluginData(DependenciesPath);
             var currentSettings = await GetPluginData(ManifestPath);
+            List<string> scopes;
+            if (currentSettings.ScopedRegistries is null)
+            {
+                scopes = new List<string>();
+                currentSettings.ScopedRegistries = new Plugin.ScopedRegistry[]
+                {
+                    new()
+                    {
+                        Name = "package.openupm.com",
+                        Url = "https://package.openupm.com",
+                        Scopes = scopes
+                    }
+                };
+            }
+            else
+            {
+                scopes = currentSettings.ScopedRegistries
+                    .First(e => e.Name == "package.openupm.com")
+                    .Scopes;
+            }
+            
             bool change = false;
-            var scopes = currentSettings.ScopedRegistries
-                .First(e => e.Name == "package.openupm.com")
-                .Scopes;
             foreach (var s in plugin.ScopedRegistries[0].Scopes.Where(s => !scopes.Contains(s)))
             {
                 scopes.Add(s);
@@ -61,16 +78,17 @@ namespace Editor
                 return;
             }
             await SavePluginData(ManifestPath, currentSettings);
+            Client.Resolve();
         }
 
-        private static async UniTask SavePluginData(string path, Plugin data)
+        private static async Task SavePluginData(string path, Plugin data)
         {
-            var stringData = JsonConvert.SerializeObject(data);
+            var stringData = JsonConvert.SerializeObject(data, Formatting.Indented);
             await File.WriteAllTextAsync(path, string.Empty);
             await File.WriteAllTextAsync(path, stringData);
         }
 
-        private static async UniTask<Plugin> GetPluginData(string path)
+        private static async Task<Plugin> GetPluginData(string path)
         {
             var stringData = await File.ReadAllTextAsync(path);// AssetDatabase.LoadAssetAtPath<TextAsset>(DependenciesPath);
             var data = JsonConvert.DeserializeObject<Plugin>(stringData);
