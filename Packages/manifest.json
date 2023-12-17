@@ -15,7 +15,6 @@
     }
   ],
   "dependencies": {
-    "com.solidalloy.type-references": "2.16.0",
     "com.coffee.ui-particle": "4.4.0",
     "com.cysharp.memorypack": "1.10.0",
     "com.cysharp.messagepipe": "1.7.4",
@@ -23,12 +22,13 @@
     "com.cysharp.unitask": "2.5.0",
     "com.cysharp.zstring": "2.5.1",
     "com.nobi.roundedcorners": "3.0.1",
-    "jp.hadashikick.vcontainer": "1.13.2",
+    "com.solidalloy.type-references": "2.16.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "3.0.27",
     "com.unity.inputsystem": "1.7.0",
     "com.unity.localization": "1.4.5",
     "com.unity.ugui": "2.0.0",
+    "jp.hadashikick.vcontainer": "1.13.2",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
